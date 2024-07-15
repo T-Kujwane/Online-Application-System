@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <display-name>Online Application System</display-name>
+    <context-param>
+        <param-name>application_name</param-name>
+        <param-value>Online Application System</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>HomeServlet</servlet-name>
+        <servlet-class>com.example.servlet.HomeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ApplicationForm</servlet-name>
+        <jsp-file>/application_form.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>ApplicationProcessorServlet</servlet-name>
+        <servlet-class>com.example.servlet.ApplicationProcessorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetApplications</servlet-name>
+        <servlet-class>com.example.servlet.GetApplications</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeServlet</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApplicationForm</servlet-name>
+        <url-pattern>/apply</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApplicationProcessorServlet</servlet-name>
+        <url-pattern>/application_processor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetApplications</servlet-name>
+        <url-pattern>/track_application</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+</web-app>
